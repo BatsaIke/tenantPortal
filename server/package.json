@@ -4,11 +4,8 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-
     "start": "node dist/index.js",
-
     "dev": "nodemon --watch src --ext ts,json --exec \"npm run build && node dist/index.js\"",
-
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -29,6 +26,7 @@
     "@types/jsonwebtoken": "^9.0.9",
     "@types/node": "^22.15.3",
     "@types/nodemailer": "^6.4.17",
+    "@vercel/node": "^5.1.15",
     "concurrently": "^9.1.2",
     "nodemon": "^3.1.10",
     "ts-node": "^10.9.2",
