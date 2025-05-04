@@ -29,3 +29,4 @@ export default defineConfig(({ mode }) => ({
     open: mode === 'development',
   }
 }));
+  
