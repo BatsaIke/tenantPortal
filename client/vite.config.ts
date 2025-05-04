@@ -5,19 +5,19 @@ import path from 'path';
 export default defineConfig(({ mode }) => ({
   plugins: [react()],
   resolve: {
-    alias: { 
+    alias: {
       '@': path.resolve(__dirname, 'src'),
-      '@server': path.resolve(__dirname, '../server')
+      '@server': path.resolve(__dirname, '../server'),
     },
   },
   build: {
-    outDir: path.resolve(__dirname, '../server/public'),
+    outDir: 'dist', // ✅ Keep inside /client for Vercel compatibility
     emptyOutDir: true,
   },
   define: {
     'process.env.VITE_API_BASE_URL': JSON.stringify(
       mode === 'production' ? '/api/v1' : 'http://localhost:3001/api/v1'
-    )
+    ),
   },
   server: {
     proxy: {
@@ -27,6 +27,5 @@ export default defineConfig(({ mode }) => ({
       },
     },
     open: mode === 'development',
-  }
+  },
 }));
-  
