@@ -4,9 +4,7 @@
       {
         "src": "client/vite.config.ts",
         "use": "@vercel/static-build",
-        "config": {
-          "distDir": "../server/public"
-        }
+        "config": { "distDir": "../server/public" }
       },
       {
         "src": "server/index.ts",
@@ -14,13 +12,8 @@
       }
     ],
     "routes": [
-      {
-        "src": "/api/v1/(.*)",
-        "dest": "server"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "client"
-      }
+      { "src": "/api/v1/(.*)", "dest": "server/index.ts" },
+      { "src": "/(.*)", "dest": "/public/index.html" }
     ]
   }
+  
